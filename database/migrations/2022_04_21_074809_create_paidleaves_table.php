@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreatePaidleavereasonsTable extends Migration
+class CreatePaidleavesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,9 +13,10 @@ class CreatePaidleavereasonsTable extends Migration
      */
     public function up()
     {
-        Schema::create('paidleavereasons', function (Blueprint $table) {
+        Schema::create('paidleaves', function (Blueprint $table) {
             $table->id();
-            $table->string('nama');
+            $table->string('nomor_induk');
+
             $table->timestamps();
                 $table->softDeletes();
         });
@@ -28,6 +29,6 @@ class CreatePaidleavereasonsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('paidleavereasons');
+        Schema::dropIfExists('paidleaves');
     }
 }

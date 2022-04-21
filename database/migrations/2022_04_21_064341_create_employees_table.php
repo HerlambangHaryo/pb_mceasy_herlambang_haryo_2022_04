@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreatePaidleavereasonsTable extends Migration
+class CreateEmployeesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,9 +13,15 @@ class CreatePaidleavereasonsTable extends Migration
      */
     public function up()
     {
-        Schema::create('paidleavereasons', function (Blueprint $table) {
+        Schema::create('employees', function (Blueprint $table) {
             $table->id();
+            $table->string('nomor_induk');
             $table->string('nama');
+            $table->date('tanggal_lahir');
+            $table->text('alamat')->nullable();
+            $table->text('kota')->nullable();
+            $table->date('tanggal_bergabung');
+            $table->smallInteger('akumulasi_cuti');
             $table->timestamps();
                 $table->softDeletes();
         });
@@ -28,6 +34,6 @@ class CreatePaidleavereasonsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('paidleavereasons');
+        Schema::dropIfExists('employees');
     }
 }
