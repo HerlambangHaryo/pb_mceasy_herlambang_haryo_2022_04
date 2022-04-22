@@ -1,3 +1,3 @@
-<label class="col-2 col-form-label"> 
+<label class="col-md-2 col-4 col-form-label"> 
     {{$title}}
 </label>

@@ -23,7 +23,7 @@
                             type    = "text" 
                             class   = "form-control form-control-lg  @error('nama') is-invalid @enderror" 
                             value   = "{{ old('title', $Paidleavereason->nama) }}" 
-                            > 
+                            disabled> 
 
                             @error('nama')
                                 <div class="invalid-feedback" >

@@ -5,7 +5,9 @@
 @section('content')      
     
     @if(session()->has('Success')) 
-        <x-studio_v30.alert-success/>  
+        <x-studio_v30.alert-success/> 
+    @elseif(session()->has('Deleted')) 
+        <x-studio_v30.alert-deleted/>  
     @endif
  
     <div id="datatable" class=" ">
@@ -30,7 +32,11 @@
                             <thead class="table-light">
                                 <tr>              
                                     <x-html.th-first/>   
-                                    <x-html.th-content title="Alasan" />
+                                    <x-html.th-content title="No. Induk" />
+                                    <x-html.th-content title="Nama" />
+                                    <x-html.th-content title="Alamat" />
+                                    <x-html.th-content title="Tangal Lahir" />
+                                    <x-html.th-content title="Tangal Bergabung" />
                                     <x-html.th-last/>
                                 </tr>
                             </thead>
@@ -42,7 +48,20 @@
                                             {{ $row->id }}
                                         </td>
                                         <td class="text-center">
+                                            {{ $row->nomor_induk }}
+                                        </td>
+                                        <td class="text-center">
                                             {{ $row->nama }}
+                                        </td>
+                                        <td class="text-center">
+                                            {{ $row->alamat }},
+                                            {{ $row->kota }}
+                                        </td>
+                                        <td class="text-center">
+                                            {{ $row->tanggal_lahir }}
+                                        </td>
+                                        <td class="text-center">
+                                            {{ $row->tanggal_bergabung }}
                                         </td>
                                         <td>
                                             

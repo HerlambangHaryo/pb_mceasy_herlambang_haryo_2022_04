@@ -5,7 +5,9 @@
 @section('content')      
     
     @if(session()->has('Success')) 
-        <x-studio_v30.alert-success/>  
+        <x-studio_v30.alert-success/> 
+    @elseif(session()->has('Deleted')) 
+        <x-studio_v30.alert-deleted/>   
     @endif
  
     <div id="datatable" class=" ">
@@ -46,7 +48,9 @@
                                             {{ $row->id }}
                                         </td>
                                         <td class="text-center">
-                                            {{ $row->employee->nomor_induk }}
+                                            @if(isset($row->employee->nomor_induk))
+                                                {{ $row->employee->nomor_induk }}
+                                            @endif
                                         </td>
                                         <td class="text-center">
                                             fr:{{ $row->tanggal_awal }}<br/>
@@ -56,7 +60,9 @@
                                             {{ $row->lama_cuti }}
                                         </td>
                                         <td class="text-center">
-                                            {{ $row->paidleavereason->nama }}
+                                            @if(isset($row->paidleavereason->nama))
+                                                {{ $row->paidleavereason->nama }}
+                                            @endif
                                         </td>
                                         <td class="text-center">
                                             {{ $row->keterangan }}

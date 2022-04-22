@@ -14,7 +14,7 @@
                   
                 <x-studio_v30.div-form-group />      
                     <x-html.label-form title="Job title" />
-                    <div class="col-5">
+                    <div class="col-8">
                         <input
                             type    = "text" 
                             class   = "form-control form-control-lg  @error('nama') is-invalid @enderror"   

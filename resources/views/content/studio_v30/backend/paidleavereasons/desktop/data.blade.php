@@ -6,6 +6,8 @@
     
     @if(session()->has('Success')) 
         <x-studio_v30.alert-success/>  
+    @elseif(session()->has('Deleted')) 
+        <x-studio_v30.alert-deleted/>  
     @endif
  
     <div id="datatable" class=" ">

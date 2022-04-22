@@ -248,6 +248,11 @@ class PaidleaveController extends Controller
             $view           = 'content.'.$this->template.'.backend.'.strtolower($this->content).'.'.$additional_view.'.'.$view_file;
 
         // ----------------------------------------------------------- Action
+            $model_Paidleavereason  = Paidleavereason::orderby('nama', 'asc')
+                                        ->get();
+
+            $model_Employee         = Employee::where('user_id', $Paidleave->employee_id)
+                                            ->first();
 
         // ----------------------------------------------------------- Send
             return view($view,  
@@ -259,7 +264,9 @@ class PaidleaveController extends Controller
                     'view_file', 
                     'template',
                     'mode',
-                    'Paidleave'
+                    'Paidleave',
+                    'model_Paidleavereason',
+                    'model_Employee'
                 )
             );
         ///////////////////////////////////////////////////////////////

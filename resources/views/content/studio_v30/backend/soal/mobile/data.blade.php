@@ -30,41 +30,155 @@
                             <thead class="table-light">
                                 <tr>              
                                     <x-html.th-first/>   
-                                    <x-html.th-content title="Alasan" />
-                                    <x-html.th-last/>
+                                    <x-html.th-content title="Soal" />
+                                    <x-html.th-content title="Status" /> 
                                 </tr>
                             </thead>
                             <tbody>   
-
-                                @forelse ($data as $row)
+ 
                                     <tr>
                                         <td>
-                                            {{ $row->id }}
+                                            1
                                         </td>
-                                        <td class="text-center">
-                                            {{ $row->nama }}
+                                        <td class=" ">
+                                            Buatlah website untuk add, delete, insert, dan edit data karyawan dan tipe cuti (programming language bebas)
                                         </td>
                                         <td>
+                                            Done
+                                            <br/>
                                             
                                             <div class="btn-group btn-group-sm">
                                                 <a type="button" 
-                                                    href="{{ route($content.'.edit', $row->id) }}" 
+                                                    href="{{ route('Paidleave.index') }}"
 
                                                     class="btn btn-default">
-                                                    <i class="fa-regular fa-pen-to-square"></i>
-                                                </a>
-                                                <a type="button" 
-                                                    href="{{ route($content.'.show', $row->id) }}" 
-
-                                                    class="btn btn-danger">
-                                                    <i class="fa-regular fa-trash-can"></i>
+                                                    <i class="fa-regular fa-eye"></i>
                                                 </a> 
                                             </div>
                                         </td>
-                                    </tr>
-                                    @empty 
-                                        
-                                @endforelse     
+                                    </tr> 
+
+
+                                    <tr>
+                                        <td>
+                                            2
+                                        </td>
+                                        <td class=" ">
+                                            Tampilkan 3 karyawan yang pertama kali bergabung
+                                        </td>
+                                        <td>
+                                            Done
+                                            <br/>
+                                            
+                                            <div class="btn-group btn-group-sm">
+                                                <a type="button" 
+                                                    href="{{ route('Employees.Jawabannodua') }}" 
+
+                                                    class="btn btn-default">
+                                                    <i class="fa-regular fa-eye"></i>
+                                                </a> 
+                                            </div>
+                                        </td>
+                                    </tr> 
+
+                                    <tr>
+                                        <td>
+                                            3
+                                        </td>
+                                        <td class=" ">
+                                            Menampilkan daftar karyawan yang saat ini pernah mengambil cuti. 
+                                            <br/>
+                                            Daftar berisikan (nomor_induk, nama, tanggal_cuti dan keterangan)
+                                        </td>
+                                        <td>
+                                            Done
+                                            <br/>
+                                            
+                                            <div class="btn-group btn-group-sm">
+                                                <a type="button" 
+                                                    href="{{ route('Paidleave.index') }}" 
+
+                                                    class="btn btn-default">
+                                                    <i class="fa-regular fa-eye"></i>
+                                                </a> 
+                                            </div>
+                                        </td>
+                                    </tr> 
+
+                                    <tr>
+                                        <td>
+                                            4
+                                        </td>
+                                        <td class=" ">
+                                            Menampilkan daftar karyawan yang saat ini pernah mengambil cuti lebih dari satu kali. 
+                                            <br/>
+                                            Daftar berisikan (nomor_induk, nama, tanggal_cuti dan keterangan)
+                                        </td>
+                                        <td>
+                                            Done
+                                            <br/>
+                                            
+                                            <div class="btn-group btn-group-sm">
+                                                <a type="button"
+                                                    href="{{ route('Paidleave.Jawabannoempat') }}"
+
+                                                    class="btn btn-default">
+                                                    <i class="fa-regular fa-eye"></i>
+                                                </a> 
+                                            </div>
+                                        </td>
+                                    </tr> 
+
+                                    <tr>
+                                        <td>
+                                            5
+                                        </td>
+                                        <td class=" ">
+                                            Aturan cuti adalah setiap tahun dapat 12 hari, dan bisa di akumulasi sebanyak apapun, dan harus dihitung otomatis dari tanggal bergabung 
+                                        </td>
+                                        <td>
+                                            Done
+                                            <br/>
+                                            -
+                                        </td>
+                                    </tr> 
+
+                                    <tr>
+                                        <td>
+                                            6
+                                        </td>
+                                        <td class=" ">
+                                            Buatlah tampilan semenarik mungkin dan se-userfriendly mungkin 
+                                        </td>
+                                        <td>
+                                            - 
+                                        </td>
+                                    </tr> 
+
+                                    <tr>
+                                        <td>
+                                            7
+                                        </td>
+                                        <td class=" ">
+                                            Jika ada yang kurang jelas, bisa buat asumsi sendiri, dengan catatan bahwa semua asumsi dituliskan dalam penyerahan submission test
+                                        </td>
+                                        <td>
+                                            - 
+                                        </td>
+                                    </tr> 
+
+                                    <tr>
+                                        <td>
+                                            8
+                                        </td>
+                                        <td class=" ">
+                                            Solusi harus bisa dijelaskan dan dipertanggung-jawabkan dalam User Interview
+                                        </td>
+                                        <td>
+                                            - 
+                                        </td>
+                                    </tr> 
+                                            
                             </tbody>
                         </table>   
                     </div>

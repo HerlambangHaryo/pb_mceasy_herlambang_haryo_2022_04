@@ -6,7 +6,7 @@
 
     <x-studio_v30.alert-delete-data/>  
 
-    <form action="{{ route($content.'.destroy', $Paidleavereason->id) }}" method="POST">
+    <form action="{{ route($content.'.destroy', $Jobtitle->id) }}" method="POST">
         @csrf
         @method('DELETE')
 
@@ -18,12 +18,12 @@
                   
                 <x-studio_v30.div-form-group />      
                     <x-html.label-form title="Job title" />
-                    <div class="col-5"> 
+                    <div class="col-8"> 
                         <input 
                             type    = "text" 
                             class   = "form-control form-control-lg  @error('nama') is-invalid @enderror" 
-                            value   = "{{ old('title', $Paidleavereason->nama) }}" 
-                            > 
+                            value   = "{{ old('title', $Jobtitle->nama) }}" 
+                            disabled> 
 
                             @error('nama')
                                 <div class="invalid-feedback" >
@@ -34,7 +34,7 @@
                         <input 
                             type    = "text" 
                             class   = "form-control form-control-lg  invisible" 
-                            value   = "{{ old('title', $Paidleavereason->nama) }}" 
+                            value   = "{{ old('title', $Jobtitle->nama) }}" 
                             name    = "nama">  
                     </div>            
                 </div>

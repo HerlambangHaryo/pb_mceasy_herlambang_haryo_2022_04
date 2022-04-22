@@ -5,7 +5,9 @@
 @section('content')      
     
     @if(session()->has('Success')) 
-        <x-studio_v30.alert-success/>  
+        <x-studio_v30.alert-success/> 
+    @elseif(session()->has('Deleted')) 
+        <x-studio_v30.alert-deleted/>   
     @endif
  
     <div id="datatable" class=" ">
@@ -30,7 +32,11 @@
                             <thead class="table-light">
                                 <tr>              
                                     <x-html.th-first/>   
-                                    <x-html.th-content title="Paid Leave" />
+                                    <x-html.th-content title="No. Induk" />
+                                    <x-html.th-content title="Tanggal Cuti" />
+                                    <x-html.th-content title="Lama Cuti" />
+                                    <x-html.th-content title="Alasan" />
+                                    <x-html.th-content title="Keterangan" />
                                     <x-html.th-last/>
                                 </tr>
                             </thead>
@@ -42,7 +48,24 @@
                                             {{ $row->id }}
                                         </td>
                                         <td class="text-center">
-                                            {{ $row->nama }}
+                                            @if(isset($row->employee->nomor_induk))
+                                                {{ $row->employee->nomor_induk }}
+                                            @endif
+                                        </td>
+                                        <td class="text-center">
+                                            fr:{{ $row->tanggal_awal }}<br/>
+                                            to:{{ $row->tanggal_akhir }}
+                                        </td>
+                                        <td class="text-center">
+                                            {{ $row->lama_cuti }}
+                                        </td>
+                                        <td class="text-center">
+                                            @if(isset($row->paidleavereason->nama))
+                                                {{ $row->paidleavereason->nama }}
+                                            @endif
+                                        </td>
+                                        <td class="text-center">
+                                            {{ $row->keterangan }}
                                         </td>
                                         <td>
                                             

@@ -3,7 +3,7 @@
 @section('title', $panel_name)
 
 @section('content')     
-    <form action="{{ route($content.'.update', $Paidleavereason->id) }}" method="POST">
+    <form action="{{ route($content.'.update', $Jobtitle->id) }}" method="POST">
         @csrf
         @method('PUT')
 
@@ -19,7 +19,7 @@
                         <input 
                             type    = "text" 
                             class   = "form-control form-control-lg  @error('nama') is-invalid @enderror" 
-                            value   = "{{ old('title', $Paidleavereason->nama) }}" 
+                            value   = "{{ old('title', $Jobtitle->nama) }}" 
                             name    = "nama"> 
 
                             @error('nama')

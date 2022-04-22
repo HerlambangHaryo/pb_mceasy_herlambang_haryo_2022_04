@@ -6,6 +6,8 @@
     
     @if(session()->has('Success')) 
         <x-studio_v30.alert-success/>  
+    @elseif(session()->has('Deleted')) 
+        <x-studio_v30.alert-deleted/>  
     @endif
  
     <div id="datatable" class=" ">
@@ -30,7 +32,7 @@
                             <thead class="table-light">
                                 <tr>              
                                     <x-html.th-first/>   
-                                    <x-html.th-content title="Alasan" />
+                                    <x-html.th-content title="Reason" />
                                     <x-html.th-last/>
                                 </tr>
                             </thead>

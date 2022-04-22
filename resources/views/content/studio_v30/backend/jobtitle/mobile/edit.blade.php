@@ -3,7 +3,7 @@
 @section('title', $panel_name)
 
 @section('content')     
-    <form action="{{ route($content.'.update', $Paidleavereason->id) }}" method="POST">
+    <form action="{{ route($content.'.update', $Jobtitle->id) }}" method="POST">
         @csrf
         @method('PUT')
 
@@ -14,12 +14,12 @@
             <div class="card-body">
                   
                 <x-studio_v30.div-form-group />      
-                    <x-html.label-form title="Reason" />
-                    <div class="col-5">
+                    <x-html.label-form title="Job title" />
+                    <div class="col-8">
                         <input 
                             type    = "text" 
                             class   = "form-control form-control-lg  @error('nama') is-invalid @enderror" 
-                            value   = "{{ old('title', $Paidleavereason->nama) }}" 
+                            value   = "{{ old('title', $Jobtitle->nama) }}" 
                             name    = "nama"> 
 
                             @error('nama')

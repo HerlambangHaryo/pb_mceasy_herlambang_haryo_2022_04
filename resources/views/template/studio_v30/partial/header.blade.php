@@ -95,12 +95,21 @@
         </div>
         <div class="menu-item dropdown  float-end">
             <a href="#" data-bs-toggle="dropdown" data-bs-display="static" class="menu-link"> 
+                <div class="menu-img online">
+                    <img src="{{ asset('/public/studio_v30') }}/assets/img/user/user.png" alt="" class="mw-100 mh-100 rounded-circle" />
+                </div>
                 <div class="menu-text">{{ $user->email }}</div>
             </a>
             <div class="dropdown-menu dropdown-menu-end me-lg-3">  
 
              
-<a class="dropdown-item" href="{{ route('logout') }}"                                onclick="event.preventDefault();                                              document.getElementById('logout-form').submit();">                                 {{ __('Logout') }}                             </a>                             <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">                                 @csrf                             </form>
+                <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();  
+                    document.getElementById('logout-form').submit();">
+                        {{ __('Logout') }}
+                </a>
+                <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;"> 
+                    @csrf
+                </form>
 
  
             </div>
