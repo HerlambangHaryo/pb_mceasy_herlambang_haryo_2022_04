@@ -15,7 +15,12 @@ class CreatePaidleavesTable extends Migration
     {
         Schema::create('paidleaves', function (Blueprint $table) {
             $table->id();
-            $table->string('nomor_induk');
+            $table->integer('employee_id'); 
+            $table->date('tanggal_awal');
+            $table->date('tanggal_akhir');
+            $table->smallInteger('lama_cuti');
+            $table->integer('paidleavereason_id');
+            $table->string('keterangan');
 
             $table->timestamps();
                 $table->softDeletes();

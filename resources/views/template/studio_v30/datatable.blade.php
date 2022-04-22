@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="{{ app()->getLocale() }}"{{ (!empty($htmlAttribute)) ? $htmlAttribute : '' }} 
-	 class="dark-mode">
+	 class="{{$mode}}">
 <head>
 	@include('template.'.$template.'.partial.head')
 
